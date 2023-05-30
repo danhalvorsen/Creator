@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Creator": {
+      "commandName": "Project",
+      "commandLineArgs": "-s Foo -p Bla"
+    }
+  }
+}
