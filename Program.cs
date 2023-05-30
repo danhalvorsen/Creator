@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using Creator.Strategy;
+using Creator.Strategy.concete;
+using System.Diagnostics;
 
 namespace Creator
 {
@@ -10,11 +12,15 @@ namespace Creator
 			Debug.Assert(args[1] != null || args[3] != null,"Invalid input to application");
 			var solutionName = args[1];
 			var webName = args[3];
-		//	new CmdProcessStarter(solutionName,webName);
 
+			var strategies = new List<IProcessStrategy>
+			{
+				new CreateSolutionStategy(solutionName),
+				new CreateEmptyWebApiStrategy(webName),
+				new AddProjectToSolutionStrategy(webName)
+		};
 
-
-
+			new Worker(strategies).DoIt();
 		}
 	}
 }
