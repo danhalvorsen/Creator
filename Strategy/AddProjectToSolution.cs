@@ -20,7 +20,7 @@ namespace Creator.Strategy
                 WorkingDirectory = "C:\\Program Files\\dotnet\\",
                 FileName = "dotnet.exe",
                 WindowStyle = ProcessWindowStyle.Hidden,
-                Arguments = $"sln add .\\{webApiName}\\{}.csproj {webApiName}"
+                Arguments = $"sln add .\\{webApiName}\\{webApiName}.csproj"
 
             };
         }
