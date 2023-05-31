@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using System.Net.WebSockets;
 
-namespace Creator.Strategy
+namespace Application.Strategy
 {
     public interface IProcessStrategy
     {

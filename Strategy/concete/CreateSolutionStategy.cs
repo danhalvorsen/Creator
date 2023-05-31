@@ -1,17 +1,17 @@
 ﻿using System.Diagnostics;
 
-namespace Creator.Strategy.concete
+namespace Application.Strategy.concete
 {
-    public class CreateSolutionStategy : AbstractProcessStrategy
+    public class CreateSolutionStrategy : AbstractProcessStrategy
     {
         private readonly string solutionName;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateSolutionStategy"/> class.
+        /// Initializes a new instance of the <see cref="CreateSolutionStrategy"/> class.
         /// 
         /// </summary>
         /// <param name="arguments">The arguments. Should be </param>
-        public CreateSolutionStategy(string arguments)
+        public CreateSolutionStrategy(string arguments)
         {
             solutionName = arguments;
         }

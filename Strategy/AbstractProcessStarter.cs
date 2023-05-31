@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Creator.Strategy
+namespace Application.Strategy
 {
 	public abstract class AbstractProcessStrategy : IProcessStrategy
 	{

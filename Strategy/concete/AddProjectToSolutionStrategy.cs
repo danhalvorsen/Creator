@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Creator.Strategy.concete
+namespace Application.Strategy.concete
 {
     public class AddProjectToSolutionStrategy : AbstractProcessStrategy
     {
