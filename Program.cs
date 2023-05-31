@@ -1,8 +1,5 @@
 ﻿using Application.Strategy;
 using Application.Strategy.concete;
-
-using Microsoft.Extensions.Hosting;
-using System.Diagnostics;
 using Creator.Model;
 
 namespace Application
@@ -16,7 +13,8 @@ namespace Application
 			var builder = WebApplication.CreateBuilder(args);
 			var app = builder.Build();
 			//ToDo - Make a generic model for a wanted solution
-			//ToDO - Do we really want an API here? Should choose between comminication handler? CLI or API
+			//ToDO - Do we really want an API here? Should choose between communication handler? CLI or API
+			//CLI :>build solution --withModel model
 			app.MapPost("/",(Model model) => {
 
 				//Debug.Assert(args[1] != null || args[3] != null,"Invalid input to application");
