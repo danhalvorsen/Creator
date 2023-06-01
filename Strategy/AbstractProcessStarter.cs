@@ -8,12 +8,10 @@ namespace Application.Strategy
 
 		public void Execute()
 		{
-			using (Process process = new Process())
-			{
-				process.StartInfo = Info;
-				process.Start();
-				process.WaitForExit();
-			}
+			using Process process = new Process();
+			process.StartInfo = Info;
+			process.Start();
+			process.WaitForExit();
 		}
 
 		public AbstractProcessStrategy(){}
