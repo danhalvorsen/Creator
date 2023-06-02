@@ -1,8 +1,7 @@
-using Application;
 using Microsoft.AspNetCore.Mvc.Testing;
 using System.Text.Json;
 using Xunit.Abstractions;
-using Xunit.Sdk;
+using Creator.API;
 
 namespace Creator._Tests
 {
@@ -28,7 +27,7 @@ namespace Creator._Tests
 		public async Task Test1()
 		{
 			var client = _testFixtureBase.CreateDefaultClient();
-			var model = new Model.Model
+			var model = new Creator.Lib.Model.Model
 			{ SolutionName = "FooName",WebProjectName = "WebApp",WorkingDirectory = @"c:\temp\" };
 			JsonSerializerOptions options = new(JsonSerializerDefaults.Web)
 			{

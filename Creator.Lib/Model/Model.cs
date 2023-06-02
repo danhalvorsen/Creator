@@ -1,4 +1,4 @@
-﻿namespace Creator.Model
+﻿namespace Creator.Lib.Model
 {
 	public interface IModel
 	{

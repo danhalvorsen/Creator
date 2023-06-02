@@ -1,8 +1,9 @@
-﻿using Application.Strategy;
+﻿using Application;
+using Application.Strategy;
 using Application.Strategy.concete;
-using Creator.Model;
+using Microsoft.AspNetCore.Http.HttpResults;
 
-namespace Application
+namespace Creator.API
 {
 	public class Program
 	{
@@ -14,8 +15,11 @@ namespace Application
 			var app = builder.Build();
 			//ToDo - Make a generic model for a wanted solution
 			//ToDO - Do we really want an API here? Should choose between communication handler? CLI or API
-			//CLI :>build solution --withModel model
-			app.MapPost("/",(Model model) => {
+			//CLI :>build solution --wi|hModel model
+			app.MapGet("/get",() => { return new Creator.Lib.Model.Model(); });
+
+			app.MapPost("/",(Creator.Lib.Model.IModel model) =>
+			{
 
 				//Debug.Assert(args[1] != null || args[3] != null,"Invalid input to application");
 				//validate the model //ToDo
@@ -34,12 +38,14 @@ namespace Application
 
 				new CreatorWithThis(strategies).Create();
 
+				return Results.Ok();
+
 			});
 
 			await app.RunAsync();
 
 		}
-		 
+
 	}
 
 }

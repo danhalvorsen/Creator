@@ -10,8 +10,11 @@ namespace Application.Strategy
 		{
 			using Process process = new Process();
 			process.StartInfo = Info;
+			Console.WriteLine("Starting process");
 			process.Start();
+			Console.WriteLine("Waiting for process to complete");
 			process.WaitForExit();
+
 		}
 
 		public AbstractProcessStrategy(){}
@@ -20,8 +23,8 @@ namespace Application.Strategy
 		{
 			get => new ProcessStartInfo
 			{
-				CreateNoWindow = true,
-				UseShellExecute = true,
+				CreateNoWindow = false,
+				UseShellExecute = false,
 				WorkingDirectory = "C:\\Program Files\\dotnet\\",
 				FileName = "dotnet.exe",
 				WindowStyle = ProcessWindowStyle.Hidden,

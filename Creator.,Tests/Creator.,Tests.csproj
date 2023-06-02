@@ -24,7 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Creator.csproj" />
+    <ProjectReference Include="..\Creator.API.csproj" />
+    <ProjectReference Include="..\Creator.Lib\Creator.Lib.csproj" />
+    <ProjectReference Include="..\Creator.WebAPI\Creator.API.csproj" />
   </ItemGroup>
 
 </Project>
