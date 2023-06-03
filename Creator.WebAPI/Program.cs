@@ -1,7 +1,7 @@
 ﻿using Application;
 using Application.Strategy;
-using Application.Strategy.concete;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Application.Strategy.Concrete;
+using Creator.Lib.Features.CreateSolution;
 
 namespace Creator.API
 {
@@ -30,7 +30,7 @@ namespace Creator.API
 			{
 				new CreateSolutionStrategy(solutionName),
 				new CreateEmptyWebApiStrategy(webName),
-				new AddProjectToSolutionStrategy(webName)
+				new AddProjectToSolution(webName)
 
 				//Download the code as zipped files
 				//https://blog.elmah.io/creating-and-downloading-zip-files-with-asp-net-core/

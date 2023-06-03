@@ -2,14 +2,14 @@
 
 namespace Application.Strategy
 {
-	public abstract class AbstractProcessStrategy : IProcessStrategy
+	public abstract class DotNetAbstractProcessStarter : IProcessStrategy
 	{
 		abstract public string Arguments();
 
 		public void Execute()
 		{
 			using Process process = new Process();
-			process.StartInfo = Info;
+			process.StartInfo = GetInfoStarter;
 			Console.WriteLine("Starting process");
 			process.Start();
 			Console.WriteLine("Waiting for process to complete");
@@ -17,9 +17,9 @@ namespace Application.Strategy
 
 		}
 
-		public AbstractProcessStrategy(){}
+		public DotNetAbstractProcessStarter(){}
 																	  
-		public ProcessStartInfo Info
+		public ProcessStartInfo GetInfoStarter
 		{
 			get => new ProcessStartInfo
 			{

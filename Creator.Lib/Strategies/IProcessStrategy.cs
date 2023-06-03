@@ -5,7 +5,7 @@ namespace Application.Strategy
 {
     public interface IProcessStrategy
     {
-        public ProcessStartInfo Info { get; }
+        public ProcessStartInfo GetInfoStarter { get; }
 
         public void Execute();
         
