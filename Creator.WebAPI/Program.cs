@@ -15,7 +15,7 @@ namespace Creator.API
 			var builder = WebApplication.CreateBuilder(args);
 			var app = builder.Build();
 			var solution = new SolutionModel("Test",@"c:\temp");
-			solution.Projects.Add(new ProjectModel("FooProject",@".\Foo",solution));
+			solution.Projects.Add(new ProjectModel("FooProject","Foo", @"./Foo", solution));
 			var model = new Model("ModelName", solution);
 
 			//ToDo - Make a generic model for a wanted solution

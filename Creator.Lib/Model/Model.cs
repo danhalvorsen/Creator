@@ -3,6 +3,7 @@
 	public interface IModel
 	{
 		string Name { get; }
+	
 	}
 
 	public class Model: IModel

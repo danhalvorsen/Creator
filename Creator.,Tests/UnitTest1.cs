@@ -34,7 +34,7 @@ namespace Creator._Tests
 
 			var projects = new List<ProjectModel>
 			{
-				new ProjectModel("Foo", @"c:\temp\Foo", solution)
+				new ProjectModel("FooWebProject", "Foo", @"./Foo", solution)
 			};
 
 			var model = new Model("TestModel", solution);
