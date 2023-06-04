@@ -1,12 +1,12 @@
 ﻿#nullable disable
-using fields.Entities.HttpServices;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 internal class ThisApplication
 {
-	private readonly HttpClientConfig config;
+	private readonly IOptions<HttpClientConfig> config;
 
-	public ThisApplication(HttpClientConfig config, ILogger<ThisApplication> logger)
+	public ThisApplication(IOptions<HttpClientConfig> config,ILogger<ThisApplication> logger)
 	{
 		this.config = config;
 		//this.service = service;

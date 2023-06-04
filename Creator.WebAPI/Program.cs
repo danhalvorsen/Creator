@@ -2,6 +2,7 @@
 using Application.Strategy;
 using Application.Strategy.Concrete;
 using Creator.Lib.Features.CreateSolution;
+using Creator.Lib.Model;
 
 namespace Creator.API
 {
@@ -13,18 +14,22 @@ namespace Creator.API
 
 			var builder = WebApplication.CreateBuilder(args);
 			var app = builder.Build();
+			var solution = new SolutionModel("Test",@"c:\temp");
+			solution.Projects.Add(new ProjectModel("FooProject",@".\Foo",solution));
+			var model = new Model("ModelName", solution);
+
 			//ToDo - Make a generic model for a wanted solution
 			//ToDO - Do we really want an API here? Should choose between communication handler? CLI or API
 			//CLI :>build solution --wi|hModel model
-			app.MapGet("/get",() => { return new Creator.Lib.Model.Model(); });
+			app.MapGet("/get",() => { return model; });
 
 			app.MapPost("/",(Creator.Lib.Model.IModel model) =>
 			{
 
 				//Debug.Assert(args[1] != null || args[3] != null,"Invalid input to application");
 				//validate the model //ToDo
-				var solutionName = model.SolutionName;
-				var webName = model.WebProjectName;
+				var solutionName = model.Name;
+				var webName = model.Name;
 
 				var strategies = new List<IProcessStrategy>
 			{

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using FluentValidation;
 
 namespace Creator.Lib.Features.CreateSolution
 {
-	internal class CreateSolutionCommandValidator
+	public class CreateSolutionCommandValidator: AbstractValidator<CreateSolutionCommand>
 	{
 	}
 }
