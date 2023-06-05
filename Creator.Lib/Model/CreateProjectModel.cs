@@ -3,15 +3,15 @@ using System.Linq.Expressions;
 
 namespace Creator.Lib.Model
 {
-	public class ProjectModel: IModel
+	public class CreateProjectModel: IModel
 	{
 		public string Name { get; set; } = string.Empty;
 		public IFolderModel Folder { get; set; }
 
-		public ProjectModel(string projectName,string folderName, string projectRelativePath,SolutionModel solution)
+		public CreateProjectModel(string projectName,IFolderModel folderModel,CreateSolutionModel solution)
 		{
 			Name = projectName;
-			Folder = new FolderModel(folderName,projectRelativePath);
+			Folder = folderModel;
 
 		}
 	}

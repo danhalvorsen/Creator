@@ -7,13 +7,13 @@
 		public string Name { get; set; }
 	}
 
-	public class FolderModel: IFolderModel
+	public class CreateFolderModel: IFolderModel
 	{
 		public string Name { get; set; }
 		public string RelativePath { get; set; }
 		public bool CreateFolder { get; set; } = true;
 
-		public FolderModel(string folderName,string relativePath)
+		public CreateFolderModel(string folderName,string relativePath)
 		{
 			this.Name = folderName;
 			this.RelativePath = relativePath;

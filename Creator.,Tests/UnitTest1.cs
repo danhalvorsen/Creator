@@ -29,12 +29,13 @@ namespace Creator._Tests
 		public async Task Test1()
 		{
 			var client = _testFixtureBase.CreateDefaultClient();
-
-			var solution = new Creator.Lib.Model.SolutionModel("name",@"c:\temp");
-
-			var projects = new List<ProjectModel>
+			var solution = new CreateSolutionModel("Foo",@"c\:temp");
+			var projects = new List<CreateProjectModel>
 			{
-				new ProjectModel("FooWebProject", "Foo", @"./Foo", solution)
+				new CreateProjectModel("FooWebProject",
+				new CreateFolderModel("tempFolder", @"./veryTemp"),
+				solution
+				)
 			};
 
 			var model = new Model("TestModel", solution);

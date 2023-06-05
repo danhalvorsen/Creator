@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Creator.Lib\Creator.Lib.csproj" />
-    <ProjectReference Include="F:\Users\Dan\source\repos\RuleEngine\src\libraries\fields\fields.csproj" />
   </ItemGroup>
 
   <ItemGroup>

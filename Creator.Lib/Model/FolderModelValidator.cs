@@ -1,17 +1,12 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Creator.Lib.Model
 {
-	public class FolderModelValidator: AbstractValidator<FolderModel>
+	public class FolderModelValidator: AbstractValidator<CreateFolderModel>
 	{
-        public FolderModelValidator()
-        {
-      RuleFor(x => x.Name).NotEmpty().NotNull().MinimumLength(4).WithMessage("The {PropertyName} is not valid");
+		public FolderModelValidator()
+		{
+			RuleFor(x => x.Name).NotEmpty().NotNull().MinimumLength(4).WithMessage("The {PropertyName} is not valid");
 			RuleFor(x => x.RelativePath).Must(ValidPathName).WithMessage("The {PropertyName} is not valid");
 
 		}

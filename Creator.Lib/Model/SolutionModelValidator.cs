@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Creator.Lib.Model
 {
-	public class SolutionModelValidator: AbstractValidator<SolutionModel>
+	public class SolutionModelValidator: AbstractValidator<CreateSolutionModel>
 	{
 		public SolutionModelValidator() 
 		{

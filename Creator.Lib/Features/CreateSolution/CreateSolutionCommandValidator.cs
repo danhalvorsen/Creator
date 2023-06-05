@@ -1,10 +1,12 @@
 ﻿
+// Ignore Spelling: Validator
+
 using Creator.Lib.Model;
 using FluentValidation;
 
 namespace Creator.Lib.Features.CreateSolution
 {
-	public class CreateSolutionCommandValidator: AbstractValidator<SolutionModel>
+	public class CreateSolutionCommandValidator: AbstractValidator<CreateSolutionModel>
 	{
 		public CreateSolutionCommandValidator()
 		{

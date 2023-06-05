@@ -3,6 +3,7 @@ using Application.Strategy;
 using Application.Strategy.Concrete;
 using Creator.Lib.Features.CreateSolution;
 using Creator.Lib.Model;
+using System.Runtime.InteropServices;
 
 namespace Creator.API
 {
@@ -14,8 +15,11 @@ namespace Creator.API
 
 			var builder = WebApplication.CreateBuilder(args);
 			var app = builder.Build();
-			var solution = new SolutionModel("Test",@"c:\temp");
-			solution.Projects.Add(new ProjectModel("FooProject","Foo", @"./Foo", solution));
+			var solution = new CreateSolutionModel("Test",@"c:\temp");
+			var folderModel = new CreateFolderModel("Foo",@".\foo");
+
+			solution.Projects.Add(
+			 new CreateProjectModel("FooProject",folderModel, solution));
 			var model = new Model("ModelName", solution);
 
 			//ToDo - Make a generic model for a wanted solution
@@ -31,9 +35,10 @@ namespace Creator.API
 				var solutionName = model.Name;
 				var webName = model.Name;
 
+				var solutionModel = new CreateSolutionModel("NameOfSolution",@"c:\temp");
 				var strategies = new List<IProcessStrategy>
 			{
-				new CreateSolutionStrategy(solutionName),
+				new CreateSolutionStrategy(solutionModel),
 				new CreateEmptyWebApiStrategy(webName),
 				new AddProjectToSolution(webName)
 

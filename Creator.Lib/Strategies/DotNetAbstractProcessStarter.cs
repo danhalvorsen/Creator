@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Creator.Lib.Model;
+using System.Diagnostics;
 
 namespace Application.Strategy
 {
@@ -33,6 +34,8 @@ namespace Application.Strategy
 			};
 		}
 
-		public string SolutionName => Arguments();
+		//public string SolutionName => Arguments();
+
+		public IModel Configuration { get; set; }
 	}
 }

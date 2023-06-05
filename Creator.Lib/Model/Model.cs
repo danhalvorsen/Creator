@@ -9,8 +9,8 @@
 	public class Model: IModel
 	{
 		public string Name { get; }
-		public SolutionModel SolutionModel { get; }
-		public Model(string name, SolutionModel model)
+		public CreateSolutionModel SolutionModel { get; }
+		public Model(string name, CreateSolutionModel model)
 		{
 			this.Name = name;
 			this.SolutionModel = model;
