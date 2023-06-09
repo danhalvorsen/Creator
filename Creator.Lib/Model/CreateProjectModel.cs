@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using System.Linq.Expressions;
-
-namespace Creator.Lib.Model
+﻿namespace Creator.Lib.Model
 {
 	public class CreateProjectModel: IModel
 	{

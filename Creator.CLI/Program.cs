@@ -1,9 +1,6 @@
 ﻿#nullable disable
-using fields.Entities.HttpServices;
-using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -19,19 +16,22 @@ static IHostBuilder CreateHostBuilder(string[] args)
 	{
 
 		IConfiguration configuration = hostContext.Configuration;
-		var config = configuration.GetSection(nameof(RulesEngineServiceOptions));
+		HttpClientConfigOption config = configuration
+		.GetSection(HttpClientConfigOption.HttpClientConfig)
+		.Get<HttpClientConfigOption>();
 		services.AddLogging(b => b.AddConsole());
 
 		//services.AddTransient<IPipelineBehavior<ExecuteWorkflowsRequest,WorkflowResponse>,LoadRuleBehavior>();
 		//services.AddTransient<IPipelineBehavior<ExecuteWorkflowsRequest,WorkflowResponse>,LoadInputBehavior>();
-		services.AddTransient<HttpClientConfig>();
-		services.AddOptions<HttpClientConfig>();
-		services.AddOptions<HttpClientConfigOptions>();
+		//services.AddTransient<HttpClientConfig>();
+		//services.AddOptions<HttpClientConfig>();
+		services.AddOptions<HttpClientConfigOption>()
+		.Bind(configuration.GetSection(HttpClientConfigOption.HttpClientConfig));
 
 		services
 							.AddSingleton<ThisApplication,ThisApplication>()
 							.AddSingleton<IAppConfig,AppConfig>();
-							
+
 	});
 	return builder;
 }

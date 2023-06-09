@@ -4,14 +4,15 @@ using Microsoft.Extensions.Options;
 
 internal class ThisApplication
 {
-	private readonly IOptions<HttpClientConfig> config;
+	private readonly HttpClientConfigOption option;
 
-	public ThisApplication(IOptions<HttpClientConfig> config,ILogger<ThisApplication> logger)
+	public ThisApplication(
+	IOptions<HttpClientConfigOption> config,
+	ILogger<ThisApplication> logger)
 	{
-		this.config = config;
+		this.option = config.Value;
 		//this.service = service;
 		logger.Log(LogLevel.Information,"Application constructed");
-		this.config = config;
 	}
 }
 //namespace Creator.CLI

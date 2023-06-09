@@ -1,5 +1,4 @@
 ﻿#nullable disable
-using System.ComponentModel.DataAnnotations;
 
 internal class AppConfig: IAppConfig
 {
@@ -17,26 +16,20 @@ public class RulesEngineServiceOptions
 	/// </summary>
 	public RulesEngineServiceOptions()
 	{
-		HttpClientConfig = new HttpClientConfigOptions();
+		HttpClientConfig = new HttpClientConfigOption();
 	}
 	/// <summary>
 	/// Gets or sets the HTTP client configuration.
 	/// </summary>
 	/// <value>The HTTP client configuration.</value>
-	public HttpClientConfigOptions HttpClientConfig { get; set; }
+	public HttpClientConfigOption HttpClientConfig { get; set; }
 }
 
-public class HttpClientConfigOptions
+public class HttpClientConfigOption
 {
-	/// <summary>
-	/// The HTTP client configuration
-	/// </summary>
+
 	public const string HttpClientConfig = "HttpClientConfig";
-	/// <summary>
-	/// Gets or sets the base address.
-	/// </summary>
-	/// <value>The base address.</value>
-	[Required]
+
 	public string BaseAddress { get; set; } = String.Empty;
 	public string RequestTimeout { get; set; } = String.Empty;
 	public string Agent { get; set; } = String.Empty;

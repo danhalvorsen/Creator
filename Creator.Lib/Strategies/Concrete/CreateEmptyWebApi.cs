@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace Application.Strategy.Concrete
+﻿namespace Application.Strategy.Concrete
 {
 	public class CreateEmptyWebApiStrategy: DotNetAbstractProcessStarter
 	{

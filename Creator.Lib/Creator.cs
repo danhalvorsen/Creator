@@ -2,14 +2,14 @@
 
 namespace Application
 {
-	public interface ICreator 
+	public interface ICreator
 	{
 		void Create();
 	}
 	public class CreatorWithThis: ICreator
 	{
 		private readonly List<IProcessStrategy> orders;
-		
+
 		public CreatorWithThis(List<IProcessStrategy> strategies)
 		{
 			this.orders = strategies;

@@ -3,9 +3,9 @@ using System.Diagnostics;
 
 namespace Application.Strategy
 {
-	public abstract class DotNetAbstractProcessStarter : IProcessStrategy
+	public abstract class DotNetAbstractProcessStarter: IProcessStrategy
 	{
-		abstract public string Arguments();
+		public abstract string Arguments();
 
 		public void Execute()
 		{
@@ -18,8 +18,8 @@ namespace Application.Strategy
 
 		}
 
-		public DotNetAbstractProcessStarter(){}
-																	  
+		public DotNetAbstractProcessStarter() { }
+
 		public ProcessStartInfo GetInfoStarter
 		{
 			get => new ProcessStartInfo

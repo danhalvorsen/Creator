@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creator.API", "Creator.WebA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creator.Handlebar", "..\Creator.Handlebar\Creator.Handlebar.csproj", "{FF090415-425E-4EF1-B596-72ED0F04E7B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creator.EF", "Creator.EF\Creator.EF.csproj", "{10DF0363-7039-4276-B33F-D33DBEBBC479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creator.EF.Tests", "Creator.EF.Tests\Creator.EF.Tests.csproj", "{17D4EEA6-1172-45F8-A4EC-1918AEFEDD6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{FF090415-425E-4EF1-B596-72ED0F04E7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF090415-425E-4EF1-B596-72ED0F04E7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF090415-425E-4EF1-B596-72ED0F04E7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10DF0363-7039-4276-B33F-D33DBEBBC479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10DF0363-7039-4276-B33F-D33DBEBBC479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10DF0363-7039-4276-B33F-D33DBEBBC479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10DF0363-7039-4276-B33F-D33DBEBBC479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17D4EEA6-1172-45F8-A4EC-1918AEFEDD6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17D4EEA6-1172-45F8-A4EC-1918AEFEDD6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17D4EEA6-1172-45F8-A4EC-1918AEFEDD6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17D4EEA6-1172-45F8-A4EC-1918AEFEDD6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

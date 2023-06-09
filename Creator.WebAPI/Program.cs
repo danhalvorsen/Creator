@@ -3,7 +3,6 @@ using Application.Strategy;
 using Application.Strategy.Concrete;
 using Creator.Lib.Features.CreateSolution;
 using Creator.Lib.Model;
-using System.Runtime.InteropServices;
 
 namespace Creator.API
 {
@@ -19,8 +18,8 @@ namespace Creator.API
 			var folderModel = new CreateFolderModel("Foo",@".\foo");
 
 			solution.Projects.Add(
-			 new CreateProjectModel("FooProject",folderModel, solution));
-			var model = new Model("ModelName", solution);
+			 new CreateProjectModel("FooProject",folderModel,solution));
+			var model = new Model("ModelName",solution);
 
 			//ToDo - Make a generic model for a wanted solution
 			//ToDO - Do we really want an API here? Should choose between communication handler? CLI or API

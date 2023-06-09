@@ -4,7 +4,7 @@ using MediatR;
 namespace Creator.Lib.Features.CreateSolution
 {
 	public class CreateSolutionCommand: IRequest<Task>
-    {
-      public IModel SolutionModel { get; set; } = new CreateSolutionModel();
-    }
+	{
+		public IModel SolutionModel { get; set; } = new CreateSolutionModel();
+	}
 }
