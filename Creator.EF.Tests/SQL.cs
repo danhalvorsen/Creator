@@ -2,10 +2,10 @@ using Creator.EF.Model;
 
 namespace Creator.EF.Tests
 {
-	public class UnitTest1
+	public class ParseSQL
 	{
 		[Fact]
-		public void Test1()
+		public void ShouldParseCreateTable()
 		{
 			Table table = new Table();
 		}

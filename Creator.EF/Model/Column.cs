@@ -1,28 +1,28 @@
-﻿namespace Creator.EF.Model;
-public class Column
-{
-	public class Field
-	{
-		private readonly Type type;
-		private readonly object value;
+﻿//namespace Creator.EF.Model;
 
-		//<Type> <Name>
-		//E.g. string Weight
-		public Field(Type type,object value)
-		{
-			this.type = type;
-			this.value = value;
-		}
-	}
-	Constraint key;
-	Field field;
+//public abstract class Column<T>: IField
+//{
+//	Constraint key;
+//	Field<T> field;
 
-	//<Type> <Name>
-	//E.g. string Weight
-	public Column(Field dataTypeValue)
-	{
-		this.key = new Constraint();
-		this.field = dataTypeValue;
-	}
-}
+//	//<Type> <Name>
+//	//E.g. string Weight
+//	public Column(Field<T> field)
+//	{
+//		this.key = new Constraint();
+//		this.field = field;
+//	}
+//}
+
+//public class ColumnInt: Column<int>
+//{
+//	public ColumnInt(Field<int> field) : base(field)
+//	{
+//	}
+//}
+
+//public class ColumnString: Column<string> {
+//	public ColumnString(FieldString field) : base(field)
+//	{ }
+//}
 

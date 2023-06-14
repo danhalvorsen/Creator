@@ -1,12 +1,24 @@
-﻿namespace Creator.EF.Model;
+﻿using System.Text.Json.Serialization;
+
+namespace Creator.EF.Model;
 //How to use source generation in System.Text.Json
+
+//[JsonDerivedType(typeof(Field),typeDiscriminator: "base")]
+//[JsonDerivedType(typeof(FieldInt),typeDiscriminator: 1)]
+//[JsonDerivedType(typeof(FieldString),typeDiscriminator: 2)]
 public class Table
 {
-	public List<Column> columns = new List<Column>();
+	
+	public IList<Field> Columns { get; set; }
 
 	public Table()
 	{
-		columns.Add(new Column(typeof(int),value: 100));
+		Columns = new List<Field>();
+	}
+
+	public void AddColumn(IField field)
+	{
+		Columns.Add(field as Field);
 	}
 
 	public override bool Equals(object? obj)
@@ -18,4 +30,5 @@ public class Table
 	{
 		throw new NotImplementedException();
 	}
+
 }
