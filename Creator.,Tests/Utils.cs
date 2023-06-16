@@ -2,14 +2,11 @@
 using System.Text;
 using System.Text.Json;
 
-namespace Creator._Tests
-{
-	public class Utils
-	{
+namespace Creator._Tests {
+	public class Utils {
 		private const string AppJson = "application/json";
 
-		public static StringContent Convert(IModel model)
-		{
+		public static StringContent Convert(IModel model) {
 			//var model = new Model.Model { SolutionName = "FooName",WebProjectName = "WebApp",WorkingDirectory = @"c:\temp\" };
 			JsonSerializerOptions options = new(JsonSerializerDefaults.Web) { WriteIndented = true };
 			string serializedModel = JsonSerializer.Serialize(model,options);

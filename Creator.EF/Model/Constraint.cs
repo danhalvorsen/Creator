@@ -1,9 +1,7 @@
 ﻿namespace Creator.EF.Model;
 
-public class Constraint
-{
-	public Constraint()
-	{
+public class Constraint {
+	public Constraint() {
 		IsKey = false;
 		Sequencer = 0;
 	}

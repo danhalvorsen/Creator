@@ -1,21 +1,17 @@
 ﻿#nullable disable
 
-internal class AppConfig: IAppConfig
-{
+internal class AppConfig: IAppConfig {
 	public string Setting { get; }
-	public AppConfig()
-	{
+	public AppConfig() {
 		Console.WriteLine("AppConfig constructed");
 	}
 }
 
-public class RulesEngineServiceOptions
-{
+public class RulesEngineServiceOptions {
 	/// <summary>
 	/// Initializes a new instance of the <see cref="RulesEngineServiceOptions" /> class.
 	/// </summary>
-	public RulesEngineServiceOptions()
-	{
+	public RulesEngineServiceOptions() {
 		HttpClientConfig = new HttpClientConfigOption();
 	}
 	/// <summary>
@@ -25,8 +21,7 @@ public class RulesEngineServiceOptions
 	public HttpClientConfigOption HttpClientConfig { get; set; }
 }
 
-public class HttpClientConfigOption
-{
+public class HttpClientConfigOption {
 
 	public const string HttpClientConfig = "HttpClientConfig";
 

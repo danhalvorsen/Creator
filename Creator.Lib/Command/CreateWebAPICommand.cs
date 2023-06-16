@@ -1,6 +1,4 @@
-﻿namespace Creator.Lib.Command
-{
-	internal class CreateWebAPICommand
-	{
+﻿namespace Creator.Lib.Command {
+	internal class CreateWebAPICommand {
 	}
 }

@@ -1,14 +1,11 @@
 ﻿using Creator.Lib.Model;
 using System.Diagnostics;
 
-namespace Application.Strategy
-{
-	public abstract class DotNetAbstractProcessStarter: IProcessStrategy
-	{
+namespace Application.Strategy {
+	public abstract class DotNetAbstractProcessStarter: IProcessStrategy {
 		public abstract string Arguments();
 
-		public void Execute()
-		{
+		public void Execute() {
 			using Process process = new Process();
 			process.StartInfo = GetInfoStarter;
 			Console.WriteLine("Starting process");
@@ -20,10 +17,8 @@ namespace Application.Strategy
 
 		public DotNetAbstractProcessStarter() { }
 
-		public ProcessStartInfo GetInfoStarter
-		{
-			get => new ProcessStartInfo
-			{
+		public ProcessStartInfo GetInfoStarter {
+			get => new ProcessStartInfo {
 				CreateNoWindow = false,
 				UseShellExecute = false,
 				WorkingDirectory = "C:\\Program Files\\dotnet\\",

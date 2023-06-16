@@ -4,18 +4,15 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using System.Text.Json;
 using Xunit.Abstractions;
 
-namespace Creator._Tests
-{
+namespace Creator._Tests {
 	[Collection("IntegrationTests")]
-	public class TestCreateSolutionWithWebApp: IClassFixture<WebApplicationFactory<Program>>
-	{
+	public class TestCreateSolutionWithWebApp: IClassFixture<WebApplicationFactory<Program>> {
 		private WebApplicationFactory<Program> _testFixtureBase;
 		private ITestOutputHelper _testOutputHelper;
 
 		public TestCreateSolutionWithWebApp(
 					 WebApplicationFactory<Program> testFixtureBase,
-					 ITestOutputHelper testOutputHelper)
-		{
+					 ITestOutputHelper testOutputHelper) {
 			_testFixtureBase = testFixtureBase;
 			_testOutputHelper = testOutputHelper;
 
@@ -25,8 +22,7 @@ namespace Creator._Tests
 
 		//Logic sits here after the application is invoked
 		[Fact]
-		public async Task Test1()
-		{
+		public async Task Test1() {
 			var client = _testFixtureBase.CreateDefaultClient();
 			var solution = new CreateSolutionModel("Foo",@"c\:temp");
 			var projects = new List<CreateProjectModel>
@@ -40,8 +36,7 @@ namespace Creator._Tests
 			var model = new Model("TestModel",solution);
 
 			//{ SolutionName = "FooName",ProjectName = "WebApp",WorkingDirectory = @"c:\temp\" };
-			JsonSerializerOptions options = new(JsonSerializerDefaults.Web)
-			{
+			JsonSerializerOptions options = new(JsonSerializerDefaults.Web) {
 				WriteIndented = true
 			};
 

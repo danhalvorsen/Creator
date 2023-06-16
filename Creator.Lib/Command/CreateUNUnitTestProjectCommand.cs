@@ -1,6 +1,4 @@
-﻿namespace Creator.Lib.Command
-{
-	internal class CreateUNUnitTestProjectCommand
-	{
+﻿namespace Creator.Lib.Command {
+	internal class CreateUNUnitTestProjectCommand {
 	}
 }

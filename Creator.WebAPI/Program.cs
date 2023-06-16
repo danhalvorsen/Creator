@@ -4,13 +4,10 @@ using Application.Strategy.Concrete;
 using Creator.Lib.Features.CreateSolution;
 using Creator.Lib.Model;
 
-namespace Creator.API
-{
-	public class Program
-	{
+namespace Creator.API {
+	public class Program {
 		//Creator --s solutionName --web WebApiName
-		public static async Task Main(string[] args)
-		{
+		public static async Task Main(string[] args) {
 
 			var builder = WebApplication.CreateBuilder(args);
 			var app = builder.Build();
@@ -26,8 +23,7 @@ namespace Creator.API
 			//CLI :>build solution --wi|hModel model
 			app.MapGet("/get",() => { return model; });
 
-			app.MapPost("/",(Creator.Lib.Model.IModel model) =>
-			{
+			app.MapPost("/",(Creator.Lib.Model.IModel model) => {
 
 				//Debug.Assert(args[1] != null || args[3] != null,"Invalid input to application");
 				//validate the model //ToDo

@@ -1,6 +1,5 @@
 ﻿#nullable disable
-internal interface IAppConfig
-{
+internal interface IAppConfig {
 	string Setting { get; }
 }
 //namespace Creator.CLI

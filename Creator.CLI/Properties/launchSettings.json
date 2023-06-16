@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Creator.CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "-A a -B b"
+    }
+  }
+}

@@ -1,10 +1,8 @@
 ﻿using Application.Strategy;
 using Creator.Lib.Model;
 
-namespace Creator.Lib.Features.CreateSolution
-{
-	public class CreateSolutionStrategy: DotNetAbstractProcessStarter
-	{
+namespace Creator.Lib.Features.CreateSolution {
+	public class CreateSolutionStrategy: DotNetAbstractProcessStarter {
 		//private readonly string solutionName;
 
 		/// <summary>
@@ -12,13 +10,11 @@ namespace Creator.Lib.Features.CreateSolution
 		/// 
 		/// </summary>
 		/// <param name="solutionName">The arguments. Should be the name of solution </param>
-		public CreateSolutionStrategy(IModel solutionModel)
-		{
+		public CreateSolutionStrategy(IModel solutionModel) {
 			this.Configuration = solutionModel;
 		}
 
-		public override string Arguments()
-		{
+		public override string Arguments() {
 
 			return $"new sln --name {Configuration.Name}";
 

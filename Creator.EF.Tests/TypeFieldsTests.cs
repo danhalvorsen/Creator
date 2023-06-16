@@ -1,13 +1,10 @@
 ﻿using Creator.EF.Model.Fields;
 using System.Text.Json;
 
-namespace Creator.EF.Tests
-{
-	public class TypeFieldsTests
-	{
+namespace Creator.EF.Tests {
+	public class TypeFieldsTests {
 		[Fact]
-		public void Test()
-		{
+		public void Test() {
 			;
 
 			ObjectMetadata FishTable = CreateFishTable();
@@ -15,13 +12,12 @@ namespace Creator.EF.Tests
 			var deserialized = JsonSerializer.Deserialize<ObjectMetadata>(jsonString);
 		}
 
-		private static ObjectMetadata CreateFishTable()
-		{
-			return new ObjectMetadata
-			{
+		private static ObjectMetadata CreateFishTable() {
+			return new ObjectMetadata {
 				ObjectName = "Fish",
 				FieldMetaData = new List<BaseType>
 				{
+					MockField.Create()
 					new IntField
 					{
 						MaxValue = 10,

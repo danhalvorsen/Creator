@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-/*
+﻿/*
  * CREATE TABLE [Posts] (
     [Id] int NOT NULL IDENTITY,
     [Title] nvarchar(max) NULL,
@@ -21,10 +16,8 @@ CREATE TABLE [Blogs] (
     CONSTRAINT [PK_Blogs] PRIMARY KEY ([Id]));
     */
 
-namespace Creator.EF.Model
-{
-	public class Database
-	{
+namespace Creator.EF.Model {
+	public class Database {
 
 	}
 }

@@ -1,6 +1,4 @@
-﻿namespace Creator.Lib.Command
-{
-	internal class AddProjectToSolutionCommand
-	{
+﻿namespace Creator.Lib.Command {
+	internal class AddProjectToSolutionCommand {
 	}
 }
