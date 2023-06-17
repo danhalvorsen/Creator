@@ -31,6 +31,10 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="foo.test.js">
+      <SubType>Code</SubType>
+      <TestFramework>Jest</TestFramework>
+    </Content>
     <None Include="server.ts" />
     <Content Include="index.html">
       <SubType>Code</SubType>
@@ -38,6 +42,30 @@
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="patterns\" />
+    <Folder Include="patterns\Chain of responsibility\" />
+    <Folder Include="patterns\Page\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="calculator.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="patterns\AddWebComponent.ts" />
+    <TypeScriptCompile Include="patterns\SetContent.ts" />
+    <TypeScriptCompile Include="patterns\Commands.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="patterns\IHttpStreamsContainer.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="patterns\TypeScript1.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="patterns\CancellationToken.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
