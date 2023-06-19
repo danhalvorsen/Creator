@@ -1,44 +1,57 @@
+import { read } from "fs";
 import { ICommand, ICommandHandler } from "./Commands";
 import IHttpStreamsContainer from "./IHttpStreamsContainer";
-
+const fs = require('fs');
 /*
 How To Server-Side Render A Web Component
 https://itnext.io/how-to-server-side-render-a-web-component-770cd25efb6f#:~:text=Server%2Dside%20rendering%20means%20the,the%20rest%20in%20the%20browser.
 */
 
-let markdown: string = `
-    <my-element>
-      <template shadowrootmode="open">
-        <style>
-          h1 {
-            color: red;
-          }
-          ::slotted(p) {
-            color: green;
-          }
-        </style>
-        <h1>Declarative Shadow DOM</h1>
-        <slot></slot>
-      </template>
-      <p>This is a light DOM</p>
-    </my-element>
-`;
-
 export class AddWebComponentCommand implements ICommand {
-    definition: string;
-	constructor(definition: string) {
-		this.definition = definition;
+	public WCdefinition: string = '';
+	constructor() {
+		let fileContent =
+			this.WCdefinition = `
+					<my-element>
+						<template shadowrootmode="open">
+							<style>
+								h1 {
+									color: red;
+								}
+								::slotted(p) {
+									color: green;
+								}
+							</style>
+							<h1>Declarative Shadow DOM</h1>
+							<slot></slot>
+						</template>
+						<p>This is a light DOM</p>
+					</my-element>`;
 	}
-}
 
-export default class CommandAggregation implements ICommand {
-	readonly commands: Array<ICommand>;
+	private readFile(file: string): string {
+		
+		fs.readFile('C:/Users/danha/source/repos/Creator/WebApp/Patterns/Page/WebComponent.xml', (error, data) => {
+			if (error) {
+				console.log(error);
+				return "";
+			}
+			console.log(data);
+			return data;	
+		});
+		return "";
+	}
+
+}
+export default class AggregationOfCommands implements ICommand {
+	readonly aggregate: Array<ICommand>;
 	constructor(commands: Array<ICommand>) {
-		this.commands = commands;
+		this.aggregate = new Array<ICommand>();
+		this.aggregate = commands;
 	}
 }
 
-export class AddWebComponentCommandHandler implements ICommandHandler<CommandAggregation> {
+export class AddWebComponentCommandHandler implements ICommandHandler<AggregationOfCommands> {
 	next: ICommandHandler<ICommand>;
 	container: IHttpStreamsContainer;
 	constructor(next: ICommandHandler<ICommand>, container: IHttpStreamsContainer) {
@@ -46,21 +59,28 @@ export class AddWebComponentCommandHandler implements ICommandHandler<CommandAgg
 		this.container = container;
 	}
 
-	handle(command: CommandAggregation): void {
+	handle(aggregate: AggregationOfCommands): void {
 		console.log('CommandAggregation')
-		console.log('AddWebComponentCommandHandler-Start')
+		console.log('CommandAggregation-Start')
 		if (this.next != null) {
-			this.next.handle(command);
+			this.next.handle(aggregate);
 		}
 
-		let c: ICommand = command.commands.find(cmd => cmd == AddWebComponentCommand);
-		let cc = c as AddWebComponentCommand;
-		if (cc == null) {
-			throw "Cast exception problems casting one or many command from the aggregate";
-		}
+		let command = TryResolveCommandFrom(aggregate);
 
-		this.container.response.write(cc.definition);
-		console.log('AddWebComponentCommandHandler-Finished')
+		this.container.response.write(command.WCdefinition);
+		console.log('CommandAggregation-Finished')
+	}
+}
+
+function TryResolveCommandFrom(command: AggregationOfCommands): AddWebComponentCommand {
+	let addWCCmd: ICommand = command.aggregate.find(i => i instanceof AddWebComponentCommand);
+	if (addWCCmd == null) {
+		throw "The wanted command is not present in the aggregate";
 	}
 
+	let castedwantedCommand = addWCCmd as AddWebComponentCommand;
+	if (castedwantedCommand == null)
+		throw "Casting promising object to wanted command failed!";
+	return castedwantedCommand;
 }

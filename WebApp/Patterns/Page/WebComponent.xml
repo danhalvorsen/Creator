@@ -1,0 +1,15 @@
+<my-element>
+	<template shadowrootmode="open">
+		<style>
+			h1 {
+			color: red;
+			}
+			::slotted(p) {
+			color: green;
+			}
+		</style>
+		<h1>Declarative Shadow DOM</h1>
+		<slot></slot>
+	</template>
+	<p>This is a light DOM</p>
+</my-element>

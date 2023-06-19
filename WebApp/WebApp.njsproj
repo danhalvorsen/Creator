@@ -39,31 +39,35 @@
     <Content Include="index.html">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Patterns\Page\WebComponent.xml" />
+    <Content Include="Readme_IoC.md">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="patterns\" />
-    <Folder Include="patterns\Chain of responsibility\" />
-    <Folder Include="patterns\Page\" />
+    <Folder Include="Patterns\" />
+    <Folder Include="Patterns\Chain of responsibility\" />
+    <Folder Include="Patterns\Page\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="calculator.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="patterns\AddWebComponent.ts" />
-    <TypeScriptCompile Include="patterns\SetContent.ts" />
-    <TypeScriptCompile Include="patterns\Commands.ts">
+    <TypeScriptCompile Include="Patterns\AddWebComponent.ts" />
+    <TypeScriptCompile Include="Patterns\SetContent.ts" />
+    <TypeScriptCompile Include="Patterns\Commands.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="patterns\IHttpStreamsContainer.ts">
+    <TypeScriptCompile Include="Patterns\IHttpStreamsContainer.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="patterns\TypeScript1.ts">
+    <TypeScriptCompile Include="Patterns\SetScript.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="patterns\CancellationToken.ts">
+    <TypeScriptCompile Include="Patterns\CancellationToken.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
