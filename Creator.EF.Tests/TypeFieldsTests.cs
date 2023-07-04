@@ -17,7 +17,7 @@ namespace Creator.EF.Tests {
 				ObjectName = "Fish",
 				FieldMetaData = new List<BaseType>
 				{
-					MockField.Create()
+					MockField.Create(),
 					new IntField
 					{
 						MaxValue = 10,

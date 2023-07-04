@@ -15,10 +15,18 @@ internal class ThisApplication {
 		logger.Log(LogLevel.Information,"Application constructed");
 
 		Console.WriteLine("Hello, World!");
+		
 		foreach (var arg in arguments.Args) {
 			Console.WriteLine(arg);
 		}
-		Console.ReadLine();
+
+		var data = string.Empty;
+		do
+		{
+			Console.WriteLine("What do you now want to do?");
+			data = Console.ReadLine();
+
+		} while (data != string.Empty) ;
 
 	}
 }

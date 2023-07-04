@@ -31,13 +31,46 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="foo.test.js">
+      <SubType>Code</SubType>
+      <TestFramework>Jest</TestFramework>
+    </Content>
     <None Include="server.ts" />
     <Content Include="index.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Patterns\Page\WebComponent.xml" />
+    <Content Include="Readme_IoC.md">
       <SubType>Code</SubType>
     </Content>
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Patterns\" />
+    <Folder Include="Patterns\Chain of responsibility\" />
+    <Folder Include="Patterns\Page\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="calculator.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Patterns\AddWebComponent.ts" />
+    <TypeScriptCompile Include="Patterns\Constants.ts" />
+    <TypeScriptCompile Include="Patterns\SetContent.ts" />
+    <TypeScriptCompile Include="Patterns\Commands.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Patterns\IHttpStreamsContainer.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Patterns\SetScript.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Patterns\CancellationToken.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/html-parser": "^0.11.2",
+    "node-html-parser": "^6.1.5"
+  }
+}
