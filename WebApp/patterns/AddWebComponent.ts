@@ -10,7 +10,7 @@ https://itnext.io/how-to-server-side-render-a-web-component-770cd25efb6f#:~:text
 export class AddWebComponentCommand implements ICommand {
 	public WCdefinition: string = '';
 	constructor() {
-		let fileContent =
+		let webComponent =
 			this.WCdefinition = `
 					<my-element>
 						<template shadowrootmode="open">
@@ -23,6 +23,7 @@ export class AddWebComponentCommand implements ICommand {
 								}
 							</style>
 							<h1>Declarative Shadow DOM</h1>
+								<button id="b1">Press me slowly</button>
 							<slot></slot>
 						</template>
 						<p>This is a light DOM</p>

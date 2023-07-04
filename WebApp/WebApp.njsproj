@@ -57,6 +57,7 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Patterns\AddWebComponent.ts" />
+    <TypeScriptCompile Include="Patterns\Constants.ts" />
     <TypeScriptCompile Include="Patterns\SetContent.ts" />
     <TypeScriptCompile Include="Patterns\Commands.ts">
       <SubType>Code</SubType>

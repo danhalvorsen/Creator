@@ -8,6 +8,7 @@ const IHttpStreamsContainer_1 = require("./patterns/IHttpStreamsContainer");
 const SetContent_1 = require("./patterns/SetContent");
 const AddWebComponent_1 = require("./patterns/AddWebComponent");
 const SetScript_1 = require("./Patterns/SetScript");
+const Constants_1 = require("./Patterns/Constants");
 const webPort = process.env.port || 1337;
 const apiport = process.env.apiport || 1338;
 const webSocket = process.env.websocket || 1340;
@@ -17,7 +18,7 @@ tsyringe_1.container.register("IHttpStreamsContainer", {
 let setContentCommandHandler = new SetContent_1.AddContentHandler(null);
 let setContentTypeHandler = new Commands_1.default(null);
 http.createServer(function (req, res) {
-    let setScriptCommand = new SetScript_1.SetScriptCommand(res, 'C:/Users/danha/source/repos/Creator/WebApp/index.html', '<script type="module" src = "https://cdn.jsdelivr.net/npm/@microsoft/fast-components/dist/fast-components.min.js" > </script>');
+    let setScriptCommand = new SetScript_1.SetScriptCommand(res, 'C:/Users/danha/source/repos/Creator/WebApp/index.html', Constants_1.scriptFastUI);
     let httpHelper = new IHttpStreamsContainer_1.HttpStreamsContainer(req, res);
     let setContentTypeCommand = new Commands_1.AddContentHeaderCommand(res, 'text/html');
     let setContentCommand = new SetContent_1.AddContentCommand(res, '<h1>Hello World</h1>\n');

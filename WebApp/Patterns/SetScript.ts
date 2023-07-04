@@ -1,7 +1,8 @@
 import { ServerResponse } from "http";
 import { ICommand, ICommandHandler } from "./Commands";
 var fs = require('fs');
-const parse = require('node-html-parser').parse;
+import { parse } from 'node-html-parser';
+import { scriptFastUI } from "./Constants";
 
 export class SetScriptCommand implements ICommand {
 
@@ -33,8 +34,11 @@ export class SetScriptHandler implements ICommandHandler<SetScriptCommand> {
 			const root = parse(html);
 			const head = root.querySelector('head');
 			if (head != null) {
-				
-				head.set_content('<script type="module" src = "https://cdn.jsdelivr.net/npm/@microsoft/fast-components/dist/fast-components.min.js" > </script>');
+				const script = head.querySelector('script');
+				console.log('FYI: Element head already have a script tag');
+
+				head.set_content(command.scriptRef);
+				console.log(root.toString());
 				fs.writeFile(command.file, root.toString(), (err) => {
 					if (err) {
 						console.log(err);

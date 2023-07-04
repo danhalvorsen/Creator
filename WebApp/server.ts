@@ -7,6 +7,7 @@ import IHttpStreamsContainer, { HttpStreamsContainer } from './patterns/IHttpStr
 import { AddContentCommand, AddContentHandler } from './patterns/SetContent';
 import AggregationOfCommands, { AddWebComponentCommand, AddWebComponentCommandHandler } from "./patterns/AddWebComponent";
 import { SetScriptCommand, SetScriptHandler } from "./Patterns/SetScript";
+import { scriptFastUI } from "./Patterns/Constants";
 
 const webPort = process.env.port || 1337
 const apiport = process.env.apiport || 1338
@@ -23,7 +24,8 @@ http.createServer(function (req, res) {
 	let setScriptCommand = new SetScriptCommand(
 		res,
 		'C:/Users/danha/source/repos/Creator/WebApp/index.html',
-		'<script type="module" src = "https://cdn.jsdelivr.net/npm/@microsoft/fast-components/dist/fast-components.min.js" > </script>')
+		scriptFastUI);
+
 	let httpHelper: IHttpStreamsContainer = new HttpStreamsContainer(req, res);	
 	let setContentTypeCommand = new AddContentHeaderCommand(res, 'text/html');
 	let setContentCommand = new AddContentCommand(res, '<h1>Hello World</h1>\n')
