@@ -1,7 +1,5 @@
-﻿namespace Creator.Handlebar.Templates
-{
-	public class UsingTemplate: ITemplate
-	{
+﻿namespace Creator.Handlebar.Templates {
+	public class UsingTemplate: ITemplate {
 
 		public string CSTemplate { get; set; } = @"
 		""

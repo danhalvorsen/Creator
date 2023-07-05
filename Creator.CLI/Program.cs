@@ -20,11 +20,6 @@ static IHostBuilder CreateHostBuilder(string[] args) {
 		.Get<HttpClientConfigOption>();
 		services.AddLogging(b => b.AddConsole());
 
-		//services.AddTransient<IPipelineBehavior<ExecuteWorkflowsRequest,WorkflowResponse>,LoadRuleBehavior>();
-		//services.AddTransient<IPipelineBehavior<ExecuteWorkflowsRequest,WorkflowResponse>,LoadInputBehavior>();
-		//services.AddTransient<HttpClientConfig>();
-		//services.AddOptions<HttpClientConfig>();
-
 		services.AddTransient<IStringArguments,StringArguments>(a => new StringArguments(args.ToList()));
 		services.AddOptions<HttpClientConfigOption>()
 		.Bind(configuration.GetSection(HttpClientConfigOption.HttpClientConfig));
@@ -36,20 +31,3 @@ static IHostBuilder CreateHostBuilder(string[] args) {
 	});
 	return builder;
 }
-//namespace Creator.CLI
-//{
-//	internal class Program
-//	{
-//		static void Main(string[] args)
-//		{
-//			Console.WriteLine("Hello, World!");
-//			//-c 
-//			if (args[0] != null && args[0].Length > 1)
-//			{
-//				if (args[1] != null && args[1].Length > 10)
-//				{ }
-//			}
-
-//		}
-//	}
-//}

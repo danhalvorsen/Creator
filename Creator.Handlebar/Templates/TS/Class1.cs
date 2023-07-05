@@ -1,4 +1,3 @@
-﻿namespace Creator.Handlebar.Templates.TS
-{
+﻿namespace Creator.Handlebar.Templates.TS {
 
 }

@@ -1,7 +1,5 @@
-﻿namespace Creator.Handlebar.Templates
-{
-	public class CommandHandlerTemplate: ITemplate
-	{
+﻿namespace Creator.Handlebar.Templates {
+	public class CommandHandlerTemplate: ITemplate {
 		public string CSTemplate { get; set; } = @"
 		""public class {{name}}CommandHandler: IRequestHandler<{{name}}Command,Task>
 			{
