@@ -11,31 +11,33 @@ namespace Creator.API {
 
 			var builder = WebApplication.CreateBuilder(args);
 			var app = builder.Build();
-			var solution = new CreateSolutionModel("Test",@"c:\temp");
 			var folderModel = new CreateFolderModel("Foo",@".\foo");
+			CreateSolutionModel? solutionModel = new CreateSolutionModel("Test",@"c:\temp");
 
-			solution.Projects.Add(
-			 new CreateProjectModel("FooProject",folderModel,solution));
-			var model = new Model("ModelName",solution);
+			solutionModel.Projects.Add(
+			 new CreateProjectModel("FooProject",folderModel,solutionModel));
+
+			//var model = new Model("ModelName",solution);
 
 			//ToDo - Make a generic model for a wanted solution
 			//ToDO - Do we really want an API here? Should choose between communication handler? CLI or API
 			//CLI :>build solution --wi|hModel model
-			app.MapGet("/get",() => { return model; });
+			app.MapGet("/get",() => { return solutionModel; });
 
-			app.MapPost("/",(Creator.Lib.Model.IModel model) => {
+			app.MapPost("/",(IModel<CreateSolutionModel> model) => {
 
 				//Debug.Assert(args[1] != null || args[3] != null,"Invalid input to application");
 				//validate the model //ToDo
-				var solutionName = model.Name;
-				var webName = model.Name;
+				var solutionName = model.Config.SolutionName;
+				var webName = model.Config.SolutionName;
 
 				var solutionModel = new CreateSolutionModel("NameOfSolution",@"c:\temp");
-				var strategies = new List<IProcessStrategy>
+				var strategies = new List<IProcessStrategy<ProcessStrategy>>
 			{
 				new CreateSolutionStrategy(solutionModel),
-				new CreateEmptyWebApiStrategy(webName),
-				new AddProjectToSolution(webName)
+				new CreateEmptyWebApiStrategy("DummyName"),
+
+				new AddProjectToSolution("")
 
 				//Download the code as zipped files
 				//https://blog.elmah.io/creating-and-downloading-zip-files-with-asp-net-core/

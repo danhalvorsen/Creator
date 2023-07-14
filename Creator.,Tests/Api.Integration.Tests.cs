@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using System.Text.Json;
 using Xunit.Abstractions;
 
-namespace Creator._Tests {
+namespace Creator.Tests {
 	[Collection("IntegrationTests")]
 	public class TestCreateSolutionWithWebApp: IClassFixture<WebApplicationFactory<Program>> {
 		private WebApplicationFactory<Program> _testFixtureBase;
@@ -24,23 +24,23 @@ namespace Creator._Tests {
 		[Fact]
 		public async Task Test1() {
 			var client = _testFixtureBase.CreateDefaultClient();
-			var solution = new CreateSolutionModel("Foo",@"c\:temp");
+			CreateSolutionModel? solutionModel = new CreateSolutionModel("Foo",@"c\:temp");
 			var projects = new List<CreateProjectModel>
 			{
 				new CreateProjectModel("FooWebProject",
 				new CreateFolderModel("tempFolder", @"./veryTemp"),
-				solution
+				solutionModel
 				)
 			};
 
-			var model = new Model("TestModel",solution);
+			//var model = new CreateSolutionModel("TestModel",solution);
 
 			//{ SolutionName = "FooName",ProjectName = "WebApp",WorkingDirectory = @"c:\temp\" };
 			JsonSerializerOptions options = new(JsonSerializerDefaults.Web) {
 				WriteIndented = true
 			};
 
-			var serializedModel = JsonSerializer.Serialize(model,options);
+			var serializedModel = JsonSerializer.Serialize(solutionModel,options);
 			var result = await client.PostAsync("/",
 				new StringContent(serializedModel,System.Text.Encoding.UTF8,"application/json"));
 

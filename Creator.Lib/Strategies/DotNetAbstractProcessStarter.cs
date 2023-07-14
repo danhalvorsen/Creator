@@ -1,8 +1,7 @@
-﻿using Creator.Lib.Model;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace Application.Strategy {
-	public abstract class DotNetAbstractProcessStarter: IProcessStrategy {
+	public abstract class DotNetAbstractProcessStarter<T>: IProcessStrategy<T> {
 		public abstract string Arguments();
 
 		public void Execute() {
@@ -14,8 +13,6 @@ namespace Application.Strategy {
 			process.WaitForExit();
 
 		}
-
-		public DotNetAbstractProcessStarter() { }
 
 		public ProcessStartInfo GetInfoStarter {
 			get => new ProcessStartInfo {
@@ -31,6 +28,5 @@ namespace Application.Strategy {
 
 		//public string SolutionName => Arguments();
 
-		public IModel Configuration { get; set; }
 	}
 }

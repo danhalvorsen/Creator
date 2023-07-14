@@ -1,7 +1,7 @@
 ﻿using Application.Strategy;
 
 namespace Creator.Lib.Strategies.Concrete {
-	public class DotNetCreateNUnitTestProject: DotNetAbstractProcessStarter {
+	public class DotNetCreateNUnitTestProject: DotNetAbstractProcessStarter<ProcessStrategy> {
 		private readonly string projectName;
 
 		public DotNetCreateNUnitTestProject(string name) {

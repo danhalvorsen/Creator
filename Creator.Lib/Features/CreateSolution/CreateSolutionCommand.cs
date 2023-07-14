@@ -3,6 +3,6 @@ using MediatR;
 
 namespace Creator.Lib.Features.CreateSolution {
 	public class CreateSolutionCommand: IRequest<Task> {
-		public IModel SolutionModel { get; set; } = new CreateSolutionModel();
+		public IModel<CreateSolutionModel> SolutionModel { get; set; } = new CreateSolutionModel(string.Empty,string.Empty);
 	}
 }

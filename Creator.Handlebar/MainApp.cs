@@ -23,8 +23,8 @@ namespace Creator.Handlebar {
 			// Use your Setup Options value loaded from appsettings file.
 			var myPropertyValue = _setupOptions.MyProperty;
 
-			var commandTemplate = Handlebars.Compile(new CommandTemplate().CSTemplate);
-			var commandHandlerTemplate = Handlebars.Compile(new CommandHandlerTemplate().CSTemplate);
+			var commandTemplate = Handlebars.Compile(new CommandTemplate().CSCode);
+			var commandHandlerTemplate = Handlebars.Compile(new CommandHandlerTemplate().CSCode);
 
 			var data = new {
 				name = "Bla"

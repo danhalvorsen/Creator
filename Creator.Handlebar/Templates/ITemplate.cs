@@ -1,5 +1,8 @@
 ﻿namespace Creator.Handlebar.Templates {
 	public interface ITemplate {
-		public string CSTemplate { get; set; }
+
+		public string CSCode { get; }
+		public string TSCode { get; }
+
 	}
 }

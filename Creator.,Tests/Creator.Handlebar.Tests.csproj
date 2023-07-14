@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Creator.Handlebar\Creator.Handlebar.csproj" />
     <ProjectReference Include="..\Creator.Lib\Creator.Lib.csproj" />
     <ProjectReference Include="..\Creator.WebAPI\Creator.API.csproj" />
   </ItemGroup>

@@ -1,12 +1,18 @@
-using Creator.Lib.Model;
 using System.Diagnostics;
 
 namespace Application.Strategy {
-	public interface IProcessStrategy {
+	public interface IProcessStrategy<M> {
 		public ProcessStartInfo GetInfoStarter { get; }
-		public IModel Configuration { get; }
 		public void Execute();
 
+	}
+
+	public class ProcessStrategy: IProcessStrategy<ProcessStrategy> {
+		public ProcessStartInfo GetInfoStarter { get; } = new ProcessStartInfo();
+
+		public void Execute() {
+			throw new NotImplementedException();
+		}
 	}
 }
 

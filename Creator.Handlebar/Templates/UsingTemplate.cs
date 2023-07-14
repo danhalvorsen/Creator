@@ -1,7 +1,6 @@
 ﻿namespace Creator.Handlebar.Templates {
 	public class UsingTemplate: ITemplate {
-
-		public string CSTemplate { get; set; } = @"
+		private string cSTemplate = @"
 		""
 		using System;
 		using System.Collections.Generic;
@@ -9,5 +8,8 @@
 		using System.Text;
 		using MediatR;""
 	";
+
+		public string TSCode => "";
+		public string CSCode => "";
 	}
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creator.,Tests", "Creator.,Tests\Creator.,Tests.csproj", "{9D4D65E0-8516-4F49-B6E4-D28A57FC68F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creator.Handlebar.Tests", "Creator.,Tests\Creator.Handlebar.Tests.csproj", "{9D4D65E0-8516-4F49-B6E4-D28A57FC68F9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creator.CLI", "Creator.CLI\Creator.CLI.csproj", "{A28F2E01-E2BD-4901-9978-8E0505F5F42C}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "WebApp", "WebApp\WebApp.njsproj", "{7D7188F3-C49D-4BAA-8AB4-82E61B142A15}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creator.Handlebar", "Creator.Handlebar\Creator.Handlebar.csproj", "{B2C20AC6-3CE0-4BE5-A4F7-C3AE18D3DDEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{B40FA84C-B6F7-4C87-800B-D1A16AD2C0CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

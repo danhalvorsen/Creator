@@ -1,17 +1,17 @@
 ﻿namespace Creator.Lib.Model {
-	public record CreateSolutionModel(string name,string rootDirectory,List<CreateProjectModel> Projects): IModel {
-		public string Name { get; set; } = string.Empty;
+
+	public class CreateSolutionModel: IModel<CreateSolutionModel> {
+
+		public CreateSolutionModel(string solutionName,string rootDirectory) {
+			this.SolutionName = solutionName;
+			this.RootDirectory = rootDirectory;
+
+		}
+
+		public string SolutionName { get; set; } = string.Empty;
 		public string RootDirectory { get; set; } = string.Empty;
-
-		public CreateSolutionModel(string name,string rootDirectory) : this(default) {
-			Name = name;
-			RootDirectory = rootDirectory;
-
-		}
-
-		public CreateSolutionModel() : this(default) {
-			Name = string.Empty;
-			Projects = new List<CreateProjectModel>();
-		}
+		public List<CreateProjectModel> Projects { get; set; } = new List<CreateProjectModel>();
+		public CreateSolutionModel Config { get; }
 	}
+
 }

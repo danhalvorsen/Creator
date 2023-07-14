@@ -1,5 +1,5 @@
 ﻿namespace Application.Strategy.Concrete {
-	public class CreateEmptyWebApiStrategy: DotNetAbstractProcessStarter {
+	public class CreateEmptyWebApiStrategy: DotNetAbstractProcessStarter<ProcessStrategy> {
 		private readonly string projectName;
 
 		public CreateEmptyWebApiStrategy(string projectName) {
