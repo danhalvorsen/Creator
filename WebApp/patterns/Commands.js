@@ -5,14 +5,16 @@ class abstractCommand {
 }
 exports.abstractCommand = abstractCommand;
 class FooCommand extends abstractCommand {
-    FooCommand() { }
+    FooCommand() {
+        console.log("FooCommand");
+    }
 }
 exports.FooCommand = FooCommand;
 class AbstractCommandHandler {
     constructor(next) {
         this.next = next;
     }
-    handle(command) {
+    handle(command, action) {
         throw new Error("Method not implemented.");
     }
 }

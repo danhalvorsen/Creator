@@ -12,13 +12,15 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.2",
-    "@types/node": "^14.14.7",
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
-    "@typescript-eslint/parser": "^5.33.0",
-    "eslint": "^8.21.0",
-    "jest": "^29.5.0",
-    "typescript": "^4.5.2"
+    "@testing-library/jest-dom": "^5.17.0",
+    "@types/jest": "^29.5.3",
+    "@types/node": "^14.18.54",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-jest-dom": "^5.0.1",
+    "jest": "^29.6.1",
+    "typescript": "^4.9.5"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
@@ -33,6 +35,6 @@
   "dependencies": {
     "@types/html-parser": "^0.11.2",
     "reflect-metadata": "^0.1.13",
-    "tsyringe": "^4.7.0"
+    "tsyringe": "^4.8.0"
   }
 }

@@ -8,9 +8,9 @@ https://itnext.io/how-to-server-side-render-a-web-component-770cd25efb6f#:~:text
 */
 
 export class AddWebComponentCommand implements ICommand {
-	public WCdefinition: string = '';
+	public WCdefinition = '';
 	constructor() {
-		let webComponent =
+		const webComponent =
 			this.WCdefinition = `
 					<my-element>
 						<template shadowrootmode="open">
@@ -67,7 +67,7 @@ export class AddWebComponentCommandHandler implements ICommandHandler<Aggregatio
 			this.next.handle(aggregate);
 		}
 
-		let command = TryResolveCommandFrom(aggregate);
+		const command = TryResolveCommandFrom(aggregate);
 
 		this.container.response.write(command.WCdefinition);
 		console.log('CommandAggregation-Finished')
@@ -75,12 +75,12 @@ export class AddWebComponentCommandHandler implements ICommandHandler<Aggregatio
 }
 
 function TryResolveCommandFrom(command: AggregationOfCommands): AddWebComponentCommand {
-	let addWCCmd: ICommand = command.aggregate.find(i => i instanceof AddWebComponentCommand);
+	const addWCCmd: ICommand = command.aggregate.find(i => i instanceof AddWebComponentCommand);
 	if (addWCCmd == null) {
 		throw "The wanted command is not present in the aggregate";
 	}
 
-	let castedwantedCommand = addWCCmd as AddWebComponentCommand;
+	const castedwantedCommand = addWCCmd as AddWebComponentCommand;
 	if (castedwantedCommand == null)
 		throw "Casting promising object to wanted command failed!";
 	return castedwantedCommand;

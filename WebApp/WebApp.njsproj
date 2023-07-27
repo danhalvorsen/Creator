@@ -5,6 +5,9 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>WebApp</Name>
     <RootNamespace>WebApp</RootNamespace>
+    <JavaScriptTestRoot>C:\Users\danha\source\repos\Creator\WebApp\</JavaScriptTestRoot>
+    <JavaScriptTestFramework>Jest</JavaScriptTestFramework>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -22,7 +25,7 @@
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <NodejsPort>1337</NodejsPort>
     <EnableTypeScript>true</EnableTypeScript>
-    <StartWebBrowser>true</StartWebBrowser>
+    <StartWebBrowser>True</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,9 +34,8 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="foo.test.js">
+    <Content Include=".eslintrc.cjs">
       <SubType>Code</SubType>
-      <TestFramework>Jest</TestFramework>
     </Content>
     <None Include="server.ts" />
     <Content Include="index.html">
@@ -51,11 +53,16 @@
     <Folder Include="Patterns\" />
     <Folder Include="Patterns\Chain of responsibility\" />
     <Folder Include="Patterns\Page\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="calculator.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="jest-setup.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Patterns\Page\AddHTMLElementCommand.ts" />
     <TypeScriptCompile Include="Patterns\AddWebComponent.ts" />
     <TypeScriptCompile Include="Patterns\Constants.ts" />
     <TypeScriptCompile Include="Patterns\SetContent.ts" />
@@ -69,6 +76,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Patterns\CancellationToken.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Tests\AddWenElementhandler.test.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>

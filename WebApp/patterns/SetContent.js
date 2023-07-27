@@ -6,7 +6,6 @@ class AddContentCommand {
         this.content = content;
         this.response = response;
     }
-    ;
     GetContent() {
         return this.content;
     }

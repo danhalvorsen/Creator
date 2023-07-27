@@ -1,14 +1,16 @@
-import { ServerResponse } from "http";
+ 
+import { ServerResponse } from "node:http";
 import { ICommand, ICommandHandler } from "./Commands";
+import http = require('http');
 
 export class AddContentCommand implements ICommand {
 
 	readonly content: string;
 	public response: ServerResponse;
-	constructor(response: ServerResponse, content: string) {
+	constructor(response: http.ServerResponse, content: string) {
 		this.content = content;
 		this.response = response;
-	};
+	}
 
 	public GetContent(): string {
 		return this.content;

@@ -1,5 +1,5 @@
-import { IncomingMessage, ServerResponse } from "http";
-import IHttpStreamsContainer, { HttpStreamsContainer } from "./IHttpStreamsContainer";
+import { ServerResponse } from "http";
+import { HandlerAction } from "./TypeAliases";
 
 export interface ICommand {
 }
@@ -8,22 +8,24 @@ export class abstractCommand implements ICommand {
 }
 
 export class FooCommand extends abstractCommand {
-	FooCommand() { }
+	FooCommand() {
+		console.log("FooCommand")
+	}
 }
 
 export interface ICommandHandler<T> {
-	handle(command: T): void
+	handle(command: T, action?: HandlerAction): void
 }
 
 export abstract class AbstractCommandHandler<T> implements ICommandHandler<T> {
-	protected handler: ICommandHandler<BlaCommand>;
+	protected handler: ICommandHandler<T>;
 	next: ICommandHandler<T>;
 
 	constructor(next: ICommandHandler<T>) {
 		this.next = next;
 	}
 
-	handle(command: T): void {
+	handle(command: T, action: HandlerAction): void {
 		throw new Error("Method not implemented.");
 	}
 }

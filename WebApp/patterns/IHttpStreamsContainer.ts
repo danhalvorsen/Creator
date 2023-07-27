@@ -1,3 +1,4 @@
+
 import { IncomingMessage, ServerResponse } from "http";
 import { injectable } from "tsyringe";
 
@@ -15,4 +16,4 @@ export class HttpStreamsContainer implements IHttpStreamsContainer {
 		this.response = res;
 	}
 
-};
+}

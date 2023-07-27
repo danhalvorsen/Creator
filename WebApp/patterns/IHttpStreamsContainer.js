@@ -23,5 +23,4 @@ HttpStreamsContainer = __decorate([
     __metadata("design:paramtypes", [http_1.IncomingMessage, http_1.ServerResponse])
 ], HttpStreamsContainer);
 exports.HttpStreamsContainer = HttpStreamsContainer;
-;
 //# sourceMappingURL=IHttpStreamsContainer.js.map

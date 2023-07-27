@@ -9,7 +9,7 @@ https://itnext.io/how-to-server-side-render-a-web-component-770cd25efb6f#:~:text
 class AddWebComponentCommand {
     constructor() {
         this.WCdefinition = '';
-        let webComponent = this.WCdefinition = `
+        const webComponent = this.WCdefinition = `
 					<my-element>
 						<template shadowrootmode="open">
 							<style>
@@ -58,18 +58,18 @@ class AddWebComponentCommandHandler {
         if (this.next != null) {
             this.next.handle(aggregate);
         }
-        let command = TryResolveCommandFrom(aggregate);
+        const command = TryResolveCommandFrom(aggregate);
         this.container.response.write(command.WCdefinition);
         console.log('CommandAggregation-Finished');
     }
 }
 exports.AddWebComponentCommandHandler = AddWebComponentCommandHandler;
 function TryResolveCommandFrom(command) {
-    let addWCCmd = command.aggregate.find(i => i instanceof AddWebComponentCommand);
+    const addWCCmd = command.aggregate.find(i => i instanceof AddWebComponentCommand);
     if (addWCCmd == null) {
         throw "The wanted command is not present in the aggregate";
     }
-    let castedwantedCommand = addWCCmd;
+    const castedwantedCommand = addWCCmd;
     if (castedwantedCommand == null)
         throw "Casting promising object to wanted command failed!";
     return castedwantedCommand;
