@@ -2,7 +2,7 @@ import http = require('http');
 import { ICommand, ICommandHandler } from "./Commands";
 import fs = require('fs');
 
-import { parse } from 'node-html-parser';
+const parse = require('node-html-parser');
 import { HandlerAction } from "./TypeAliases";
 import { ServerResponse } from 'http';
 

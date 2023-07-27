@@ -1,7 +1,7 @@
-//import type { Config } from 'jest';
-//const config: Config = {
-//  /*setupFilesAfterEnv: ['<rootDir>/setup-jest.js'],*/
-//  setupFilesAfterEnv: ['./setup-jest.js'],
-//};
-//export default config;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const config = {
+    verbose: true,
+};
+exports.default = config;
 //# sourceMappingURL=jest-setup.js.map

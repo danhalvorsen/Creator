@@ -1,8 +1,7 @@
-//import type { Config } from 'jest';
+import type { Config } from 'jest';
 
-//const config: Config = {
-//  /*setupFilesAfterEnv: ['<rootDir>/setup-jest.js'],*/
-//  setupFilesAfterEnv: ['./setup-jest.js'],
-//};
+const config: Config = {
+  verbose: true,
+};
 
-//export default config;
+export default config;
